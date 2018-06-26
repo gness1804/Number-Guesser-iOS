@@ -25,18 +25,24 @@ class ViewController: UIViewController {
         return true
     }
     
+    func compareNumbers(userNum: Int, compNum: Int) {
+        if userNum == compNum {
+            mainOutput.text = "You win!!"
+        } else if userNum < compNum {
+            mainOutput.text = "Your number is too low. Please try again."
+        } else {
+            mainOutput.text = "Your number is too high. Please try again."
+        }
+    }
+    
     // TODO: come back to nil check for no input
     @IBAction func mainButton(_ sender: Any) {
         userNumber = (Int(numberInput.text!))!
         computerNumber = Int(arc4random_uniform(101))
         print(userNumber)
         print(computerNumber)
-//        if userNumber == nil {
-//            print("Error: please enter a number.")
-//            return
-//        }
         if inputIsValid(input: userNumber) {
-            print("Input is valid.")
+            compareNumbers(userNum: userNumber, compNum: computerNumber)
         }
     }
     
