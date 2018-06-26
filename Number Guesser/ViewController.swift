@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var numberInput: UITextField!
     
+    @IBAction func resetGame(_ sender: Any) {
+        freezeCompNum = false
+    }
+    
     func inputIsValid(input: Int) -> Bool {
         if input < 0 || input > 100 {
             print("Error: your number must be between 0 and 100. Please try again.")
