@@ -43,6 +43,9 @@
                                 <rect key="frame" x="158" y="281" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Guess!"/>
+                                <connections>
+                                    <action selector="mainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="toX-jg-sCj"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Take a guess above..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF0-Bm-Yi8">
                                 <rect key="frame" x="16" y="335" width="333" height="46"/>
@@ -55,6 +58,10 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mainOutput" destination="IF0-Bm-Yi8" id="Pxs-SJ-ieJ"/>
+                        <outlet property="numberInput" destination="boX-92-OuT" id="jS0-JF-JoP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
