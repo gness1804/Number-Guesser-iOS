@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     var computerNumber: Int = 0
     
+    var freezeCompNum = false
+    
     @IBOutlet weak var mainOutput: UILabel!
     
     @IBOutlet weak var numberInput: UITextField!
@@ -28,6 +30,7 @@ class ViewController: UIViewController {
     func compareNumbers(userNum: Int, compNum: Int) {
         if userNum == compNum {
             mainOutput.text = "You win!!"
+            freezeCompNum = false
         } else if userNum < compNum {
             mainOutput.text = "Your number is too low. Please try again."
         } else {
@@ -38,7 +41,10 @@ class ViewController: UIViewController {
     // TODO: come back to nil check for no input
     @IBAction func mainButton(_ sender: Any) {
         userNumber = (Int(numberInput.text!))!
-        computerNumber = Int(arc4random_uniform(101))
+        if !freezeCompNum {
+            computerNumber = Int(arc4random_uniform(101))
+            freezeCompNum = true
+        }
         print(userNumber)
         print(computerNumber)
         if inputIsValid(input: userNumber) {
