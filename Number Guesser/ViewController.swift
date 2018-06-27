@@ -42,8 +42,11 @@ class ViewController: UIViewController {
         }
     }
     
-    // TODO: come back to nil check for no input
     @IBAction func mainButton(_ sender: Any) {
+        if numberInput.text == "" {
+            mainOutput.text = "Oops, you must enter a value! Please try again."
+            return
+        }
         userNumber = (Int(numberInput.text!))!
         if !freezeCompNum {
             computerNumber = Int(arc4random_uniform(101))
