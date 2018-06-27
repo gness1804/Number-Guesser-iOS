@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     @IBAction func resetGame(_ sender: Any) {
         freezeCompNum = false
+        mainOutput.text = "Game was reset."
     }
     
     func inputIsValid(input: Int) -> Bool {
